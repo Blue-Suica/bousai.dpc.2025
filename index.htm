@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防災の輪</title>
+    <!-- Tailwind CSSを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Interフォントの設定 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* アクティブなナビゲーションリンクのスタイル */
+        .nav-link.active {
+            color: #ffffff;
+            background-color: #0b93ff;
+            font-weight: 600;
+        }
+        
+        /* Google Mapの埋め込み用の基本スタイル */
+        .map-container {
+            /* aspect-squareクラス（Tailwind）が縦横比を制御します */
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            width: 100%; 
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%; 
+            display: block;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- ヘッダーとナビゲーション -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center h-28 md:h-20">
+                <!-- サイトタイトル -->
+                <h1 class="text-2xl font-bold text-gray-800 mb-2 md:mb-0">防災の輪</h1>
+                
+                <!-- ナビゲーションリンク -->
+                <nav class="flex space-x-1 md:space-x-2 lg:space-x-4 overflow-x-auto pb-2 md:pb-0">
+                    <!-- ナビゲーションリンクのリスト -->
+                    <button class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out active" data-page="home">このサイトについて</button>
+                    <button class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out" data-page="page1">新蒲原駅</button>
+                    <button class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out" data-page="page2">蒲原駅</button>
+                    <button class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out" data-page="page3">由比駅</button>
+                    <button class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out" data-page="page4">興津駅</button>
+                    <button class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out" data-page="page5">清水駅</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ領域 -->
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- ============================================== -->
+        <!-- Home ページコンテンツ (このサイトについて) -->
+        <!-- ============================================== -->
+        <section id="home" class="page-content bg-white p-6 md:p-8 rounded-xl shadow-lg transition-opacity duration-300">
+            <h2 class="text-3xl font-extrabold text-blue-600 mb-6 border-b-2 pb-2">このサイトについて</h2>
+            <div class="space-y-4">
+                <p class="text-gray-700 leading-relaxed">このサイトは、Homeと5つの情報ページで構成されています。ナビゲーションメニューから各ページに移動し、埋め込まれた地図をご覧ください。</p>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- Page 1〜5 ページコンテンツ (Google Mapのみ) -->
+        <!-- ============================================== -->
+        
+        <!-- Page 1: 新蒲原駅 -->
+        <section id="page1" class="page-content hidden bg-white p-6 md:p-8 rounded-xl shadow-lg transition-opacity duration-300">
+            <h2 class="text-3xl font-extrabold text-blue-600 mb-6 border-b-2 pb-2">新蒲原駅</h2>
+            <!-- Google Map 埋め込み -->
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">新蒲原駅周辺地図</h3>
+            <p class="text-gray-600 mb-6">新蒲原駅から一番近い津波避難タワーです。</p>
+            <div class="map-container aspect-square">
+                <!-- カスタムマップのiframe (新蒲原駅) -->
+                <iframe
+                    src="https://www.google.com/maps/d/u/2/embed?mid=18Y4a12wr5zcVAoLzW_bf9WMaFAIR4cQ&ehbc=2E312F"
+                    title="新蒲原駅 周辺地図 (カスタムマップ)"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Page 2: 蒲原駅 -->
+        <section id="page2" class="page-content hidden bg-white p-6 md:p-8 rounded-xl shadow-lg transition-opacity duration-300">
+            <h2 class="text-3xl font-extrabold text-blue-600 mb-6 border-b-2 pb-2">蒲原駅</h2>
+            <!-- Google Map 埋め込み -->
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">蒲原駅周辺地図</h3>
+            <p class="text-gray-600 mb-6">蒲原駅から一番近い津波避難タワーです。</p>
+            <div class="map-container aspect-square">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d138.636!3d35.118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z6aeF576O6aeF!5e0!3m2!1sja!2sjp!4v1678280000000!5m2!1sja!2sjp"
+                    title="蒲原駅 周辺地図"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Page 3: 由比駅 -->
+        <section id="page3" class="page-content hidden bg-white p-6 md:p-8 rounded-xl shadow-lg transition-opacity duration-300">
+            <h2 class="text-3xl font-extrabold text-blue-600 mb-6 border-b-2 pb-2">由比駅</h2>
+            <!-- Google Map 埋め込み -->
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">由比駅周辺地図</h3>
+            <p class="text-gray-600 mb-6">由比駅から一番近い津波避難タワーです。</p>
+            <div class="map-container aspect-square">
+                <!-- カスタムマップのiframe (由比駅) を適用 -->
+                <iframe
+                    src="https://www.google.com/maps/d/u/2/embed?mid=10H2R7DlU0ZNuWlwvMCpJSKarrSPaOE8&ehbc=2E312F"
+                    title="由比駅 周辺地図 (カスタムマップ)"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Page 4: 興津駅 -->
+        <section id="page4" class="page-content hidden bg-white p-6 md:p-8 rounded-xl shadow-lg transition-opacity duration-300">
+            <h2 class="text-3xl font-extrabold text-blue-600 mb-6 border-b-2 pb-2">興津駅</h2>
+            <!-- Google Map 埋め込み -->
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">興津駅周辺地図</h3>
+            <p class="text-gray-600 mb-6">興津駅から一番近い津波避難タワーです。</p>
+            <div class="map-container aspect-square">
+                <!-- カスタムマップのiframe (興津駅) を適用 -->
+                <iframe
+                    src="https://www.google.com/maps/d/u/2/embed?mid=1UlYsU1QmLvX8LGRyWAYaJmb_sxzvGnw&ehbc=2E312F"
+                    title="興津駅 周辺地図 (カスタムマップ)"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Page 5: 清水駅 -->
+        <section id="page5" class="page-content hidden bg-white p-6 md:p-8 rounded-xl shadow-lg transition-opacity duration-300">
+            <h2 class="text-3xl font-extrabold text-blue-600 mb-6 border-b-2 pb-2">清水駅</h2>
+            <!-- Google Map 埋め込み -->
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">清水駅周辺地図</h3>
+            <p class="text-gray-600 mb-6">清水駅から一番近い津波避難タワーです。</p>
+            <div class="map-container aspect-square">
+                <!-- カスタムマップのiframe (清水駅) を適用 -->
+                <iframe
+                    src="https://www.google.com/maps/d/u/2/embed?mid=1Udrkzw0p7cs0ekomlbMsbD8Co7ty5ys&ehbc=2E312F"
+                    title="清水駅 周辺地図 (カスタムマップ)"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- JavaScriptでページ切り替えを制御 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ページコンテンツ要素とナビゲーションリンク要素を取得
+            const pageContents = document.querySelectorAll('.page-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            /**
+             * ページ表示を切り替える関数
+             * @param {string} targetPageId - 表示するページのID (例: 'home', 'page1')
+             */
+            function showPage(targetPageId) {
+                // すべてのページコンテンツを非表示にする
+                pageContents.forEach(content => {
+                    content.classList.add('hidden');
+                    // スムーズな切り替えのために透明度をリセット
+                    content.style.opacity = '0';
+                });
+
+                // すべてのナビゲーションリンクから 'active' クラスを削除する
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // 対象のページコンテンツを表示し、透明度を1にする
+                const targetPage = document.getElementById(targetPageId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                    // わずかな遅延（requestAnimationFrame）を入れて、hidden解除後に透明度を変更し、CSSトランジションを有効にする
+                    requestAnimationFrame(() => {
+                        targetPage.style.opacity = '1';
+                    });
+                }
+
+                // 対象のナビゲーションリンクに 'active' クラスを追加する
+                const activeLink = document.querySelector(`.nav-link[data-page="${targetPageId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+                
+                // ページが切り替わったら、ビューポートの先頭にスクロールする
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // ナビゲーションリンクにイベントリスナーを設定する
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetPageId = link.getAttribute('data-page');
+                    if (targetPageId) {
+                        showPage(targetPageId);
+                    }
+                });
+            });
+
+            // 初期表示としてHomeページを表示する
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
