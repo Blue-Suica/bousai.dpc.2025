@@ -65,18 +65,35 @@
         
         <section id="home" class="page-content transition-opacity duration-300 space-y-12">
             
-            <!-- グループ 1: (メイン) の見出しと (1) のコンテンツ -->
+<!-- グループ 1: (メイン) の見出しと (1) のコンテンツ (オリジナル) -->
             <div>
                 <!-- メイン見出し -->
-                <h2 class="text-3xl font-extrabold text-blue-600 border-b-2 pb-2 mb-6">このサイトについて</h2>
+                <h2 class="text-3xl font-extrabold text-blue-600 border-b-2 pb-2 mb-6">このサイトについて (メイン)</h2>
                 
-                <!-- コンテンツ 1 のボックス -->
+                <!-- 元のコンテンツ 1 のボックス -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                     <div class="space-y-4">
-                        <!-- 黒字本文 (text-gray-900) - サブタイトル(h3)を削除したため、直接本文を表示 -->
-                        <p class="text-gray-900 leading-relaxed">このサイトは、Homeと5つの情報ページで構成されています。ナビゲーションメニューから各ページに移動し、埋め込まれた地図をご覧ください。</p>
+                        <!-- 黒字サブタイトル (text-gray-900) -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">このサイトの目的</h3>
+                        <!-- 黒字本文 (text-gray-900) - <a>タグで外部リンクを設定 -->
+                        <p class="text-gray-900 leading-relaxed">
+                            <a href="https://www.google.com/" target="_blank" class="text-blue-500 hover:text-blue-700 underline font-medium">このサイト</a>は、Homeと5つの情報ページで構成されています。ナビゲーションメニューから各ページに移動し、埋め込まれた地図をご覧ください。
+                        </p>
                     </div>
                 </div>
+                
+                <!-- 複製したコンテンツボックス (mt-6で間隔を確保) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 mt-6">
+                    <div class="space-y-4">
+                        <!-- 黒字サブタイトル (text-gray-900) - コピーと明記 -->
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">このサイトの目的（コピー）</h3>
+                        <!-- 黒字本文 (text-gray-900) - <a>タグで外部リンクを設定 -->
+                        <p class="text-gray-900 leading-relaxed">
+                            <a href="https://www.google.com/" target="_blank" class="text-blue-500 hover:text-blue-700 underline font-medium">このサイト</a>は、Homeと5つの情報ページで構成されています。ナビゲーションメニューから各ページに移動し、埋め込まれた地図をご覧ください。
+                        </p>
+                    </div>
+                </div>
+
             </div>
             
             <!-- グループ 2: (コピー) の見出しと (2) のコンテンツ -->
@@ -88,7 +105,7 @@
                 <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                     <div class="space-y-4">
                         <!-- 黒字本文 (text-gray-900) - サブタイトル(h3)を削除したため、直接本文を表示 -->
-                        <p class="text-gray-900 leading-relaxed">高校生向けのワークショップ形式の講座です。<br>詳しくは下記サイトをご覧ください。<br><a href="https://www.city.shizuoka.lg.jp/p009288.html" target="_blank" class="text-blue-500 hover:text-blue-700 underline font-medium">https://www.city.shizuoka.lg.jp/p009288.htm</a></p>
+                        <p class="text-gray-900 leading-relaxed">静岡市が主催している高校生向けのワークショップ形式の講座です。<br>詳しくは下記サイトをご覧ください。<br><a href="https://www.city.shizuoka.lg.jp/p009288.html" target="_blank" class="text-blue-500 hover:text-blue-700 underline font-medium">https://www.city.shizuoka.lg.jp/p009288.htm</a></p>
                     </div>
                 </div>
             </div>
